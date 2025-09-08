@@ -1,13 +1,7 @@
 import { useState } from "react";
 import {
-  Modal,
-  TextInput,
   NumberInput,
-  Select,
-  Button,
-  Stack,
 } from "@mantine/core";
-import { useForm } from '@mantine/form';
 
 type AddExpenseModalProps = {
     opened: boolean;
@@ -22,24 +16,22 @@ type AddExpenseModalProps = {
 export default function AddExpenseModal({}: AddExpenseModalProps) {
   const [name, setName] = useState<string>("");
   const [amount, setAmount] = useState<string | number>(0);
-  const [category, setCategory] = useState<string | null>(null);
+  // const [category, setCategory] = useState<string | null>(null);
   
   const [nameError, setNameError] = useState(false);
-  const [categoryError, setCategoryError] = useState(false);
+  // const [categoryError, setCategoryError] = useState(false);
 
     const inputNameOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setNameError(false);
     setName(event.target.value);
   };
 
-    const selectCatagoryOnChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setCategoryError(false);
-    setCategory(event.target.value);
-  };
+  //   const selectCatagoryOnChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  //   setCategoryError(false);
+  //   setCategory(event.target.value);
+  // };
 
-  const handleSubmit = () => {
 
-  }
 
   // หากต้องการแปง type string เป็น type number สามารถดูตัวอย่างนี้ได้
   let val_number: number = Number("500.0");
@@ -48,11 +40,11 @@ export default function AddExpenseModal({}: AddExpenseModalProps) {
 
 
 
-    const computeTotalPayment = () => {
-    let total = 0;
+  //   const computeTotalPayment = () => {
+  //   let total = 0;
     
-    return total;
-  };
+  //   return total;
+  // };
 
   return (
     /* Type additional text here. */
@@ -78,12 +70,12 @@ export default function AddExpenseModal({}: AddExpenseModalProps) {
                 <div className="invalid-feedback">Invalid last name</div>
               </div>
               <NumberInput value={amount} onChange={setAmount} />
-      <div className="mt-2">
+      {/* <div className="mt-2">
               <label className="form-label">Plan</label>
               <select
                 className={"form-select" + (categoryError ? " is-invalid" : "")}
                 onChange={selectCatagoryOnChange}
-              >
+              > */}
                 {/* <option value="">Please select..</option>
                 <option value="funrun">Fun run 5.5 Km (500 THB)</option>
                 <option value="mini">Mini Marathon 10 Km (800 THB)</option>
@@ -91,9 +83,9 @@ export default function AddExpenseModal({}: AddExpenseModalProps) {
                 <option value="full">
                   Full Marathon 42.195 Km (1,500 THB)
                 </option> */}
-              </select>
+              {/* </select>
               <div className="invalid-feedback">Please select a Plan</div>
-            </div>
+            </div> */}
       </div>
     </div>
   </div>
