@@ -4,9 +4,10 @@ import {
   useMantineColorScheme,
   Group,
   ActionIcon,
+  ThemeIcon,
 } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
-import { IconSun, IconMoon } from "@tabler/icons-react";
+import { IconSun, IconMoon, IconBusinessplan } from "@tabler/icons-react";
 
 interface HeaderComponentProps {
   opened: boolean;
@@ -41,6 +42,15 @@ export default function HeaderComponent({
         >
           TRACKER-APP
         </Text>
+        <ThemeIcon
+      variant="filled"
+      color={isDark ? "yellow" : "blue"}
+      size="lg"
+      aria-label="Gradient action icon"
+      gradient={{ from: 'blue', to: 'cyan', deg: 90 }}
+    >
+      <IconBusinessplan />
+    </ThemeIcon>
       </Group>
       <Group gap={5}>
         <ActionIcon

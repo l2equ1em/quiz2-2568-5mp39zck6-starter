@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Button, Stack, Title, Divider, Container } from "@mantine/core";
 import { v4 as uuidv4 } from "uuid";
+import { useForm } from '@mantine/form';
+import { NumberInput, TextInput, Select } from '@mantine/core';
 
 type Expense = {
   id: string;
@@ -19,8 +21,14 @@ export default function ExpenseTracker() {
       <Title order={2} mb="md">
         Expense Tracker
       </Title>
-      <Button>Add Expense Item</Button>
+      <Button
+        type="button"
+        className="m-4 btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#modalcomponent"
+      >Add Expense Item</Button>
       {/* Type additional AddExpenseModal here. */}
+
 
       <Divider my="md" />
       {/* Type additional total cost here. */}
