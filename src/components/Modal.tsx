@@ -81,10 +81,8 @@ export default function AddExpenseModal({}: AddExpenseModalProps) {
       <div className="mt-2">
               <label className="form-label">Plan</label>
               <select
-                data = {[]}
                 className={"form-select" + (categoryError ? " is-invalid" : "")}
                 onChange={selectCatagoryOnChange}
-                value={category}
               >
                 {/* <option value="">Please select..</option>
                 <option value="funrun">Fun run 5.5 Km (500 THB)</option>
